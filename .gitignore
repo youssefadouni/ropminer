@@ -1,0 +1,117 @@
+# ============================================================
+# Python
+# ============================================================
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# IDE / OS
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ============================================================
+# Generated gadget caches
+# ============================================================
+dataset/gadget_cache/
+
+# ============================================================
+# Large generated HMM sequence files
+# ============================================================
+dataset/hmm/benign_sequences.json
+dataset/hmm/malicious_sequences.json
+dataset/hmm/malicious_sequences_dev.json
+
+# ============================================================
+# Raw PE datasets
+# ============================================================
+dataset/benign/
+dataset/malicious/
+dataset/malicious_dev/
+dataset/injector_targets/
+
+# ============================================================
+# Payloads / shellcode
+# ============================================================
+dataset/payloads/
+dataset/test_injection/
+ROPInjector/shellcodes/
+
+# ============================================================
+# Generated temporary output
+# ============================================================
+/tmp/
+*.tmp
+*.log
+
+# ============================================================
+# Old / experimental Python versions
+# ============================================================
+*_old.py
+*_before_*.py
+*_backup.py
+
+# ============================================================
+# Backup / generated gadget databases
+# ============================================================
+gadgets_dict_backup.json
+
+# ============================================================
+# ROPInjector nested Git metadata
+# ============================================================
+ROPInjector/.git/
+ROPInjector/.vs/
+
+# ============================================================
+# ROPInjector build output
+# ============================================================
+ROPInjector/Release/
+ROPInjector/Debug/
+ROPInjector/ROPInjector/Release/
+ROPInjector/ROPInjector/Debug/
+
+# Visual Studio build artifacts
+*.obj
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+*.recipe
+*.suo
+*.user
+
+# ============================================================
+# Local executable/build artifacts
+# ============================================================
+*.exe
+
+# ============================================================
+# Generated gadget database
+# ============================================================
+gadgets_dict.json
+
+# ============================================================
+# Local PE test fixture
+# ============================================================
+data/*.dll
+data/*.exe
+
+# ============================================================
+# Legacy / intermediate evaluation outputs
+# ============================================================
+dataset/combined_evaluation.json
+dataset/rci_scores.json
+dataset/rci_scores_baseline.json
+dataset/hmm_benign_scores.txt
+dataset/hmm_malicious_scores.txt
