@@ -115,3 +115,13 @@ dataset/rci_scores.json
 dataset/rci_scores_baseline.json
 dataset/hmm_benign_scores.txt
 dataset/hmm_malicious_scores.txt
+
+# ============================================================
+# Final evaluation PE dataset
+# Explicitly included for reproducibility
+# ============================================================
+!dataset/final_pe_dataset/
+!dataset/final_pe_dataset/benign/
+!dataset/final_pe_dataset/malicious/
+!dataset/final_pe_dataset/benign/*
+!dataset/final_pe_dataset/malicious/*
