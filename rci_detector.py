@@ -3,7 +3,6 @@
 import argparse
 import json
 import math
-import pickle
 import struct
 from pathlib import Path
 
@@ -158,7 +157,12 @@ def calculate_rci_adjustment(
             posterior[i, addr1]
         )
 
-        if j < 0 or j >= len(observations):
+        out_of_bounds = (
+            j < 0
+            or j >= len(observations)
+        )
+
+        if out_of_bounds:
             p_j_addr1 = 0.0
         else:
             p_j_addr1 = float(
@@ -186,10 +190,15 @@ def calculate_rci_adjustment(
 
         factors.append(factor)
 
-        if (
-            p_i_addr1 >= 0.50
-            and p_j_not_addr1 >= 0.50
-        ):
+        violation = (
+            out_of_bounds
+            or (
+                p_i_addr1 >= 0.50
+                and p_j_not_addr1 >= 0.50
+            )
+        )
+
+        if violation:
             violations.append({
                 "i": i,
                 "j": j,
@@ -200,6 +209,7 @@ def calculate_rci_adjustment(
                 "p_j_addr1": p_j_addr1,
                 "p_j_not_addr1": p_j_not_addr1,
                 "factor": factor,
+                "out_of_bounds": out_of_bounds,
             })
 
     return (
